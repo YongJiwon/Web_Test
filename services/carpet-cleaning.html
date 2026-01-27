@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페트 - 공간그린케어</title>
+    <meta name="description" content="카페트 전문 서비스 안내 페이지입니다. 맞춤형 관리와 일정 조율로 쾌적한 환경을 제공합니다.">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .contact-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--background-color);
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #fff;
+            color: var(--text-color);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(125, 157, 67, 0.2);
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .service-hero-breadcrumb {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            z-index: 4;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            text-align: left;
+        }
+        .service-hero-breadcrumb a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .service-hero-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .service-hero-breadcrumb {
+                top: 16px;
+                left: 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/placeholders/공간그린케어-원본-가로.svg" alt="공간그린케어 로고">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="../index.html">홈</a>
+                    <a href="../index.html#services-summary-section">서비스</a>
+                    <div class="nav-dropdown nav-dropdown--single">
+                        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            식음·상업시설 <span class="nav-caret" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="food-grade-cleaning.html" class="dropdown-link">음식점 위생등급평가</a>
+                            <a href="carpet-cleaning.html" class="dropdown-link">카페트</a>
+                            <a href="chair-cleaning.html" class="dropdown-link">의자</a>
+                            <a href="odor-removal.html" class="dropdown-link">냄새 제거</a>
+                            <a href="bakeout-cleaning.html" class="dropdown-link">베이크아웃(새집증후군)</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown nav-dropdown--single">
+                        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            사무·업무시설 <span class="nav-caret" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="office-cleaning.html" class="dropdown-link">사무실</a>
+                            <a href="construction-cleaning.html" class="dropdown-link">준공</a>
+                            <a href="pebble-cleaning.html" class="dropdown-link">콩자갈</a>
+                            <a href="aircon-cleaning.html" class="dropdown-link">에어컨</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown nav-dropdown--single">
+                        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            건물·특수 <span class="nav-caret" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="solar-panel-cleaning.html" class="dropdown-link">태양광 패널</a>
+                            <a href="floor-coating-cleaning.html" class="dropdown-link">바닥 코팅</a>
+                        </div>
+                    </div>
+                    <a href="../contact.html">견적문의</a>
+                </nav>
+                <div class="header-cta">
+                    <a href="tel:18442355" class="btn btn-secondary">전화하기</a>
+                    <a href="{카카오링크}" target="_blank" class="btn btn-secondary">카카오톡 상담</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 콘텐츠 교체 지점: HERO -->
+        <section class="service-hero">
+            <div class="service-hero-bg">
+                <img src="../images/office/hero.jpg" alt="카페트 대표 이미지">
+            </div>
+            <div class="service-hero-breadcrumb">
+                <a href="../index.html">홈</a> &gt;
+                <a href="../index.html#services-summary-section">식음·상업시설</a> &gt;
+                <a href="carpet-cleaning.html">카페트</a>
+            </div>
+            <div class="container">
+                <p class="animate-on-scroll" style="animation-delay: 0.05s;">전문 장비로 깔끔하게 관리합니다</p>
+                <h1 class="animate-on-scroll" style="animation-delay: 0.1s;">카페트</h1>
+                <p class="animate-on-scroll" style="animation-delay: 0.15s;">맞춤형 관리와 일정 조율로 운영에 지장을 최소화합니다.</p>
+                <div class="animate-on-scroll" style="animation-delay: 0.2s;">
+                    <a href="#consult" class="btn btn-primary btn-lg">온라인 견적문의</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 서비스 안내 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">서비스 안내</h2>
+                <div class="service-item">
+                    <div class="service-text-content">
+                        <p>카페트 서비스는 공간 특성과 이용 목적에 맞춘 맞춤형 프로그램으로 진행됩니다. 인증 세제와 전문 장비를 사용해 위생과 안전을 함께 관리하며, 일정에 맞춰 작업해 운영에 지장을 최소화합니다.</p>
+                    </div>
+                    <div class="service-image-wrapper">
+                        <img src="../images/office/intro.jpg" alt="카페트 서비스 안내 이미지">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 서비스 범위 -->
+        <section class="content-section bg-light">
+            <div class="container">
+                <h2 class="section-title">카페트 서비스 범위</h2>
+                <div class="detail-cards">
+                    <div class="detail-card">
+                        <div class="detail-card-img">
+                            <img src="../images/office/scope-office.jpg" alt="작업 공간 관리">
+                        </div>
+                        <div class="detail-card-content">
+                            <h3>작업 공간</h3>
+                            <ul>
+                                <li>출입 동선 및 주요 구역 정리</li>
+                                <li>표면 오염 제거 및 먼지 제거</li>
+                                <li>바닥/벽면/천장 기본 세정</li>
+                                <li>필요 시 추가 클리닝</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-card-img">
+                            <img src="../images/office/scope-env.jpg" alt="세부 세정 작업">
+                        </div>
+                        <div class="detail-card-content">
+                            <h3>세부 세정</h3>
+                            <ul>
+                                <li>집중 오염 구역 정밀 세정</li>
+                                <li>틈새/모서리 오염 제거</li>
+                                <li>필요 구간 살균/탈취</li>
+                                <li>작업 후 마감 정리</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-card-img">
+                            <img src="../images/office/scope-common.jpg" alt="위생 관리">
+                        </div>
+                        <div class="detail-card-content">
+                            <h3>위생 관리</h3>
+                            <ul>
+                                <li>다중 접촉 구역 집중 관리</li>
+                                <li>환기·탈취로 쾌적함 유지</li>
+                                <li>오염원 제거 및 정돈</li>
+                                <li>현장 상태 점검</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-card-img">
+                            <img src="../images/office/scope-maintenance.jpg" alt="유지관리">
+                        </div>
+                        <div class="detail-card-content">
+                            <h3>유지관리</h3>
+                            <ul>
+                                <li>정기/수시 관리 일정 운영</li>
+                                <li>이벤트 전후 정리 지원</li>
+                                <li>현장 맞춤형 서비스</li>
+                                <li>사후 점검 및 피드백</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 서비스 대상 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">카페트 서비스 대상</h2>
+                <div class="card-grid-3">
+                    <div class="card">
+                        <h3 class="card-title">기업 및 일반 회사</h3>
+                        <p>업무 효율을 높이는 쾌적한 환경 관리</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">공공기관</h3>
+                        <p>안전 기준에 맞춘 체계적인 위생 관리</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">스타트업/창업 기업</h3>
+                        <p>유연한 일정과 맞춤형 청소 플랜 제공</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">의료기관</h3>
+                        <p>살균 중심의 위생 관리 및 오염 예방</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">교육기관</h3>
+                        <p>다중 이용 공간의 청결 유지</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">공유오피스</h3>
+                        <p>공용 공간 집중 관리로 만족도 향상</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 비즈니스 전문 청소 서비스 -->
+        <section class="content-section bg-light">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>비즈니스 전문 청소 서비스</h2>
+                    <p>상업·비즈니스 환경에 최적화된 장비와 숙련된 팀이 친환경 세제를 활용해 꼼꼼하게 관리합니다. 고객 요구를 최우선으로 고려하여 일정과 범위를 맞춤 설계합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 비즈니스 케어 솔루션 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">공간그린케어의 비즈니스 케어 솔루션</h2>
+                <ul class="recommendation-list">
+                    <li><a href="#">상가청소</a></li>
+                    <li><a href="#">음식점청소</a></li>
+                    <li><a href="#">후드청소</a></li>
+                    <li><a href="#">유리창청소</a></li>
+                    <li><a href="#">간판·어닝청소</a></li>
+                    <li><a href="#">사무실청소</a></li>
+                    <li><a href="#">바닥·카페트</a></li>
+                    <li><a href="#">방역소독</a></li>
+                    <li><a href="#">에어컨정밀청소</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 시공사·협력사 -->
+        <section class="content-section bg-light">
+            <div class="container">
+                <h2 class="section-title">시공사·협력사</h2>
+                <div class="card-grid-3" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-01.png" alt="협력사 로고 1"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-02.png" alt="협력사 로고 2"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-03.png" alt="협력사 로고 3"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-04.png" alt="협력사 로고 4"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-05.png" alt="협력사 로고 5"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-06.png" alt="협력사 로고 6"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-07.png" alt="협력사 로고 7"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-08.png" alt="협력사 로고 8"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-09.png" alt="협력사 로고 9"></div>
+                    <div class="card" style="padding: 1.5rem; text-align: center;"><img src="../images/partners/logo-10.png" alt="협력사 로고 10"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 신뢰/강점 -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">청소에 진심인 {업체명}</h2>
+                <div class="card-grid-3">
+                    <div class="card">
+                        <h3 class="card-title">✔ 청소전문가 과정수료</h3>
+                        <p>전문 교육을 이수한 숙련 인력이 작업합니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">✔ 청소대행사 인증업체</h3>
+                        <p>신뢰 가능한 인증 기준을 충족합니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">✔ 배상책임보험 가입</h3>
+                        <p>작업 중 발생 가능한 리스크에 대비합니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">✔ 친환경 약품크리닝</h3>
+                        <p>안전한 약품으로 건강까지 고려합니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">✔ 24시간 친절상담</h3>
+                        <p>원하시는 시간에 편하게 문의하세요.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">✔ 서비스 지역 무료견적</h3>
+                        <p>현장 상황에 맞춘 합리적 견적을 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 고객센터 -->
+        <section class="content-section bg-light">
+            <div class="container">
+                <h2 class="section-title">고객센터</h2>
+                <div class="card-grid-3">
+                    <div class="card">
+                        <h3 class="card-title">대표전화</h3>
+                        <p><a href="tel:18442355">1844-2355</a></p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">모바일 · 이메일</h3>
+                        <p><a href="tel:010-0000-0000">010-0000-0000</a></p>
+                        <p><a href="mailto:contact@company.com">contact@company.com</a></p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">계좌정보</h3>
+                        <p>{은행} {계좌번호}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 콘텐츠 교체 지점: 온라인 상담신청 -->
+        <section class="content-section" id="consult">
+            <div class="container">
+                <h2 class="section-title">온라인 상담신청</h2>
+                <p class="section-subtitle">신속하게 연락드리겠습니다.</p>
+                <div class="contact-form-container">
+                    <form action="mailto:contact@company.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">이름</label>
+                            <input type="text" id="name" name="name" placeholder="이름을 입력해주세요">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">연락처</label>
+                            <input type="tel" id="phone" name="phone" placeholder="연락처를 입력해주세요">
+                        </div>
+                        <div class="form-group">
+                            <label for="region">지역</label>
+                            <input type="text" id="region" name="region" placeholder="지역을 입력해주세요">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">서비스 선택</label>
+                            <select id="service" name="service">
+                                <option value="">서비스를 선택해주세요</option>
+                                <option value="office">사무실청소</option>
+                                <option value="regular">정기청소</option>
+                                <option value="construction">준공청소</option>
+                                <option value="aircon">에어컨청소</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">문의내용</label>
+                            <textarea id="message" name="message" placeholder="문의 내용을 입력해주세요"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">상담 신청하기</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-info">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">공간그린케어</div>
+                <div class="footer-info">
+                    <p>{사업자정보}</p>
+                    <p>주소: {주소}</p>
+                    <p>대표전화 1844-2355</p>
+                    <p>이메일: contact@company.com</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../contact.html">견적 문의</a>
+                    <a href="tel:18442355">전화 상담</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 공간그린케어 All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

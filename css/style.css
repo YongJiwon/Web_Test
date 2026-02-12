@@ -1,0 +1,763 @@
+/* ----------------------------------------------------------------
+    Global Styles
+-----------------------------------------------------------------*/
+:root {
+    --primary-color: #7d9d43;
+    --secondary-color: #f1f1f1;
+    --dark-color: #333;
+    --light-color: #fff;
+    --font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-top: 0;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; color: #111; text-align: center; margin-bottom: 40px; }
+h3 { font-size: 1.5rem; }
+
+section {
+    padding: 60px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0d5cbe;
+    border-color: #0d5cbe;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: 2px solid var(--dark-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+/* ----------------------------------------------------------------
+    Header
+-----------------------------------------------------------------*/
+.header {
+    width: 100%;
+    background-color: var(--light-color);
+    border-bottom: 1px solid #eee;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 105px;
+}
+
+.header .logo a {
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+}
+
+.header .logo {
+    padding-top: 0px;
+}
+
+.logo-container {
+    height: 85px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    height: 210px;
+    width: auto;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 0 20px;
+}
+
+.nav-menu li a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right .tel {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* ----------------------------------------------------------------
+    Hero Section
+-----------------------------------------------------------------*/
+.hero {
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-color);
+    background: url('../images/Hero-Banner.png') no-repeat center center/cover;
+    position: relative;
+    margin-top: 105px; /* Header height */
+}
+/* 여기 이미지 교체 */
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+/* 여기 문구 교체 */
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+/* 여기 문구 교체 */
+
+.hero .btn {
+    margin: 0 10px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+/* ----------------------------------------------------------------
+    Trust Points Section
+-----------------------------------------------------------------*/
+.trust-points {
+    background: #f8fafb;
+}
+
+.trust-points-header {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.trust-points-header h2 {
+    margin-bottom: 14px;
+}
+
+.trust-points-header p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #4d5866;
+}
+
+.trust-point-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+.trust-point-card {
+    background: #fff;
+    border: 1px solid #e7edf2;
+    border-radius: 14px;
+    padding: 30px 24px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.trust-point-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: rgba(125, 157, 67, 0.15);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.trust-point-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.trust-point-card p {
+    margin: 0;
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: #4a4a4a;
+}
+
+/* ----------------------------------------------------------------
+    Services Section
+-----------------------------------------------------------------*/
+#services {
+    background-color: var(--secondary-color);
+}
+
+#services.services-section {
+    background: #f7f9fb;
+}
+
+.services-section .section-heading {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.services-section .section-heading h2 {
+    margin-bottom: 12px;
+}
+
+.services-section .section-heading p {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #52606d;
+}
+
+.services-premium-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.service-premium-card {
+    background: #fff;
+    border: 1px solid #e7edf2;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-premium-media {
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #e9eef2;
+}
+
+.service-premium-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.service-premium-body {
+    padding: 20px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.service-premium-title {
+    margin: 0;
+    font-size: 1.14rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    min-height: calc(1.4em * 2);
+}
+
+.service-premium-desc {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #566171;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    min-height: calc(1.65em * 3);
+}
+
+.services-section-more {
+    text-align: center;
+    margin-top: 44px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+/* 여기 아이콘/이미지 교체 */
+.service-card img.icon {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    clip-path: inset(10%);
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+}
+
+/* ----------------------------------------------------------------
+    Gallery Section
+-----------------------------------------------------------------*/
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+/* 여기 이미지 교체 */
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85%;
+    position: relative;
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: var(--light-color);
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+
+/* ----------------------------------------------------------------
+    FAQ Section
+-----------------------------------------------------------------*/
+#faq {
+    background-color: var(--secondary-color);
+}
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    border-bottom: 1px solid #ccc;
+}
+.faq-item summary {
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none; /* Firefox */
+    position: relative;
+}
+.faq-item summary::-webkit-details-marker {
+    display: none; /* Chrome */
+}
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item .answer {
+    padding: 0 20px 20px;
+    background-color: var(--light-color);
+    border-top: 1px solid #eee;
+}
+
+/* ----------------------------------------------------------------
+    CTA Section
+-----------------------------------------------------------------*/
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta-section h2 {
+    color: var(--light-color);
+    margin-bottom: 30px;
+}
+
+.cta-buttons .btn {
+    margin: 10px;
+    min-width: 200px;
+    background: var(--light-color);
+    color: var(--primary-color);
+    border-color: var(--light-color);
+    padding: 15px 30px;
+}
+.cta-buttons .btn:hover {
+    background: #e9e9e9;
+    color: var(--primary-color);
+}
+.cta-buttons .btn i {
+    margin-right: 8px;
+}
+/* 여기 링크 교체 */
+
+/* ----------------------------------------------------------------
+    Floating Quick Menu
+-----------------------------------------------------------------*/
+.quick-menu {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.quick-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quick-menu li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.quick-menu li a:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: scale(1.1);
+}
+
+.quick-menu li a i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* ----------------------------------------------------------------
+    Footer
+-----------------------------------------------------------------*/
+.footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-info {
+    max-width: 500px;
+}
+.footer-info p {
+    margin: 5px 0;
+}
+.footer-info span {
+    margin-right: 15px;
+}
+/* 여기 업체 정보 교체 */
+
+.footer-links a {
+    margin-left: 20px;
+    color: #ccc;
+}
+.footer-links a:hover {
+    color: var(--light-color);
+}
+
+/* ----------------------------------------------------------------
+    Responsive
+-----------------------------------------------------------------*/
+@media (max-width: 992px) {
+    .header .container {
+        padding: 0 30px;
+    }
+    .hamburger {
+        display: block;
+        z-index: 1002;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--dark-color);
+        color: var(--light-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease-in-out;
+        padding-top: 60px;
+    }
+    .nav-menu.active {
+        right: 0;
+    }
+    .nav-menu li {
+        margin: 20px 0;
+    }
+    .nav-menu li a {
+        font-size: 1.5rem;
+    }
+    .nav-menu li a::after {
+        background-color: var(--light-color);
+    }
+    .header-right .tel, .header-right .btn {
+        display: none;
+    }
+    .quick-menu {
+        display: none;
+    }
+    .services-premium-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+    .trust-point-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.7rem; }
+    section { padding: 40px 0; }
+    .hero { height: 50vh; }
+    .services-section .section-heading {
+        margin-bottom: 30px;
+    }
+    .services-section .section-heading p {
+        font-size: 0.96rem;
+    }
+    .services-premium-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .service-premium-body {
+        padding: 18px 18px 20px;
+    }
+    .services-section-more {
+        margin-top: 30px;
+    }
+    .trust-points-header {
+        margin-bottom: 32px;
+    }
+    .trust-points-header p {
+        font-size: 0.97rem;
+    }
+    .trust-point-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .trust-point-card {
+        padding: 24px 20px;
+    }
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-info {
+        margin-bottom: 20px;
+    }
+    .footer-links {
+        margin-top: 10px;
+    }
+}

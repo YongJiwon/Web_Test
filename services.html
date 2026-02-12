@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="공간그린케어의 모든 전문 청소 서비스를 확인해보세요. 사무실, 상가, 입주/준공 청소, 바닥 코팅 등 고객 맞춤형 서비스를 제공합니다.">
+    <title>서비스 소개 | 공간그린케어</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ================== Header ================== -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-container">
+                        <img src="images/공간그린케어-원본-가로.svg" alt="공간그린케어" class="logo-img">
+                    </div>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="services.html">서비스</a></li>
+                    <li><a href="index.html#gallery">시공사례</a></li>
+                    <li><a href="contact.html">견적문의</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="tel:1844-2355" class="tel">1844-2355</a>
+                <a href="contact.html" class="btn btn-primary">견적문의</a>
+            </div>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+        <main>
+        <!-- ================== Catalog Hero ================== -->
+        <section class="hero catalog-hero">
+            <div class="hero-content">
+                <h1>전체 서비스 카탈로그</h1>
+                <p>필요한 청소 서비스를 빠르게 탐색하고 비교한 뒤, 상세페이지로 이동해보세요.</p>
+            </div>
+        </section>
+
+        <!-- ================== Service Catalog ================== -->
+        <section id="service-catalog" class="service-catalog">
+            <div class="container">
+                <div class="catalog-heading">
+                    <h2>서비스 탐색 / 비교 / 선택</h2>
+                    <p>카테고리를 선택하면 해당 서비스만 확인할 수 있습니다.</p>
+                </div>
+
+                <div class="catalog-filters" role="tablist" aria-label="서비스 카테고리 필터">
+                    <button type="button" class="catalog-filter-btn is-active" data-filter="all" aria-selected="true">전체</button>
+                    <button type="button" class="catalog-filter-btn" data-filter="indoor" aria-selected="false">실내공간 청소</button>
+                    <button type="button" class="catalog-filter-btn" data-filter="equipment" aria-selected="false">설비·특수 청소</button>
+                    <button type="button" class="catalog-filter-btn" data-filter="environment" aria-selected="false">환경개선</button>
+                    <button type="button" class="catalog-filter-btn" data-filter="movein" aria-selected="false">준공·입주</button>
+                </div>
+
+                <div class="catalog-grid" id="catalogGrid">
+                    <article class="catalog-card" data-category="indoor">
+                        <figure class="catalog-card-media">
+                            <img src="./images/Office.png" alt="사무실 정기청소">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">사무실 정기청소</h3>
+                            <p class="catalog-card-desc">업무 시간과 동선을 고려한 정기 클리닝으로 쾌적한 근무 환경을 안정적으로 유지합니다.</p>
+                            <a href="services/office.html?service=office" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="indoor">
+                        <figure class="catalog-card-media">
+                            <img src="./images/Carpet.png" alt="카페트 침대 의자청소">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">카페트 / 침대 / 의자청소</h3>
+                            <p class="catalog-card-desc">섬유 깊숙한 오염과 냄새를 제거해 실내 공기질과 이용자 체감 위생을 함께 높입니다.</p>
+                            <a href="services/office.html?service=fabric" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="indoor environment">
+                        <figure class="catalog-card-media">
+                            <img src="./images/Kitchen.png" alt="음식점 위생등급평가">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">음식점 위생등급평가</h3>
+                            <p class="catalog-card-desc">위생 기준에 맞춘 집중 청소로 점검 대응력을 높이고 매장 신뢰도를 강화합니다.</p>
+                            <a href="services/office.html?service=hygiene" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="indoor">
+                        <figure class="catalog-card-media">
+                            <img src="./images/Floor.png" alt="바닥코팅청소">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">바닥코팅청소</h3>
+                            <p class="catalog-card-desc">바닥 재질과 마모 상태를 고려해 코팅과 세척을 적용하여 내구성과 광택을 관리합니다.</p>
+                            <a href="services/office.html?service=floor" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="equipment">
+                        <figure class="catalog-card-media">
+                            <img src="./images/Solar_panel.png" alt="태양광패널청소">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">태양광패널청소</h3>
+                            <p class="catalog-card-desc">패널 표면 오염을 제거해 발전 효율 저하를 줄이고 안정적인 출력 유지에 기여합니다.</p>
+                            <a href="services/office.html?service=solar" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="equipment">
+                        <figure class="catalog-card-media">
+                            <img src="./images/Factory_partition_wall_cleaning.png" alt="공장칸막이청소">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">공장칸막이청소</h3>
+                            <p class="catalog-card-desc">생산 환경을 고려한 방식으로 칸막이와 설비 주변 오염을 체계적으로 정리합니다.</p>
+                            <a href="services/office.html?service=factory" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="equipment environment">
+                        <figure class="catalog-card-media">
+                            <img src="./images/Ceiling_cassette_air_conditioner.png" alt="에어컨 분해청소">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">에어컨 분해청소</h3>
+                            <p class="catalog-card-desc">내부 오염과 악취를 제거해 냉방 효율과 실내 공기질을 동시에 개선합니다.</p>
+                            <a href="services/office.html?service=aircon" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="environment">
+                        <figure class="catalog-card-media">
+                            <img src="./images/Office.png" alt="베이크아웃 냄새제거">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">베이크아웃 / 냄새제거</h3>
+                            <p class="catalog-card-desc">신축 및 리모델링 공간의 유해 냄새와 잔류 오염원을 단계별로 관리합니다.</p>
+                            <a href="services/office.html?service=deodorization" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="movein">
+                        <figure class="catalog-card-media">
+                            <img src="./images/House.png" alt="준공청소">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">준공청소</h3>
+                            <p class="catalog-card-desc">공사 분진과 마감 잔여물을 제거해 운영 시작 전에 즉시 사용할 수 있는 상태를 만듭니다.</p>
+                            <a href="services/office.html?service=completion" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card" data-category="movein">
+                        <figure class="catalog-card-media">
+                            <img src="./images/House.png" alt="입주청소">
+                        </figure>
+                        <div class="catalog-card-body">
+                            <h3 class="catalog-card-title">입주청소</h3>
+                            <p class="catalog-card-desc">입주 전 생활 먼지와 잔여 오염을 정리해 바로 생활 가능한 청결 상태를 제공합니다.</p>
+                            <a href="services/office.html?service=movein" class="catalog-card-link">자세히 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== Service Selection Guide ================== -->
+        <section class="service-select-guide">
+            <div class="container">
+                <div class="catalog-heading">
+                    <h2>어떤 서비스가 필요하신가요?</h2>
+                    <p>현장 상태에 따라 추천 서비스를 빠르게 확인해보세요.</p>
+                </div>
+                <div class="guide-grid">
+                    <article class="guide-card">
+                        <h3>입주·준공 직후 분진이 많다면</h3>
+                        <p>새집 먼지, 공사 잔여물, 유리/바닥 오염이 보인다면 준공청소 또는 입주청소를 권장합니다.</p>
+                        <span class="guide-tag">추천: 준공청소 · 입주청소</span>
+                    </article>
+                    <article class="guide-card">
+                        <h3>실내 냄새와 공기질이 걱정된다면</h3>
+                        <p>새집증후군, 잔류 냄새, 공기 탁함이 느껴진다면 베이크아웃 및 냄새제거 서비스를 추천합니다.</p>
+                        <span class="guide-tag">추천: 베이크아웃 · 냄새제거</span>
+                    </article>
+                    <article class="guide-card">
+                        <h3>냉방 성능 저하가 체감된다면</h3>
+                        <p>냉방 약화, 곰팡이 냄새, 먼지 배출이 있다면 에어컨 분해청소로 설비 효율을 회복해보세요.</p>
+                        <span class="guide-tag">추천: 에어컨 분해청소</span>
+                    </article>
+                    <article class="guide-card">
+                        <h3>위생 인증/점검 대응이 필요하다면</h3>
+                        <p>업소 위생평가나 실내 위생 기준 대응이 필요하다면 전문 위생등급평가 청소가 효과적입니다.</p>
+                        <span class="guide-tag">추천: 음식점 위생등급평가</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== Catalog CTA ================== -->
+        <section class="catalog-cta">
+            <div class="container">
+                <h2>무료 견적 문의</h2>
+                <p>현장 조건에 맞춰 필요한 서비스만 정확하게 안내해드립니다.</p>
+                <div class="catalog-cta-buttons">
+                    <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-file-invoice"></i> 온라인 문의</a>
+                    <a href="tel:1844-2355" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> 전화 문의</a>
+                    <a href="{카카오채널 링크}" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-comment"></i> 카톡 문의</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================== Footer ================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-info">
+                <!-- 여기 업체 정보 교체 -->
+                <h3>공간그린케어</h3>
+                <p>&copy; 2024 공간그린케어. All Rights Reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">개인정보처리방침</a>
+                <a href="contact.html">견적문의</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.catalog-filter-btn');
+            const cards = document.querySelectorAll('.catalog-card');
+
+            if (!filterButtons.length || !cards.length) return;
+
+            const applyFilter = (filter) => {
+                cards.forEach((card) => {
+                    const categories = (card.dataset.category || '').split(/\s+/);
+                    const isMatch = filter === 'all' || categories.includes(filter);
+                    card.classList.toggle('is-hidden', !isMatch);
+                });
+            };
+
+            filterButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const targetFilter = button.dataset.filter;
+
+                    filterButtons.forEach((btn) => {
+                        const isActive = btn === button;
+                        btn.classList.toggle('is-active', isActive);
+                        btn.setAttribute('aria-selected', String(isActive));
+                    });
+
+                    applyFilter(targetFilter);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

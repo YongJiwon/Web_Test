@@ -7,6 +7,12 @@
     --dark-color: #333;
     --light-color: #fff;
     --font-family: 'Noto Sans KR', sans-serif;
+    --transition-base: 0.25s ease;
+    --radius-button: 10px;
+    --radius-card: 16px;
+    --shadow-card: 0 8px 20px rgba(15, 23, 42, 0.06);
+    --shadow-card-hover: 0 16px 32px rgba(15, 23, 42, 0.12);
+    --border-card: 1px solid #e7edf2;
 }
 
 *,
@@ -65,12 +71,25 @@ section {
 }
 
 .btn {
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 11px 24px;
+    border-radius: var(--radius-button);
+    font-weight: 700;
+    line-height: 1.25;
+    transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
     text-align: center;
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+    outline: 2px solid rgba(125, 157, 67, 0.85);
+    outline-offset: 3px;
 }
 
 .btn-primary {
@@ -80,8 +99,10 @@ section {
 }
 
 .btn-primary:hover {
-    background-color: #0d5cbe;
-    border-color: #0d5cbe;
+    background-color: #6f8d3c;
+    border-color: #6f8d3c;
+    box-shadow: 0 8px 18px rgba(125, 157, 67, 0.24);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -93,6 +114,7 @@ section {
 .btn-secondary:hover {
     background-color: var(--dark-color);
     color: var(--light-color);
+    transform: translateY(-1px);
 }
 
 /* ----------------------------------------------------------------
@@ -107,7 +129,7 @@ section {
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: background-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base);
     color: var(--light-color);
 }
 
@@ -174,7 +196,7 @@ section {
     width: 0;
     height: 2px;
     background-color: var(--light-color);
-    transition: width 0.3s ease;
+    transition: width var(--transition-base);
 }
 
 .header.scrolled .nav-menu li a::after {
@@ -258,7 +280,7 @@ section {
     appearance: none;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: background-color var(--transition-base), border-color var(--transition-base);
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -402,7 +424,7 @@ section {
     font-weight: 700;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(125, 157, 67, 0.35);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base), border-color var(--transition-base);
 }
 
 .hero-home .hero-phone-btn i {
@@ -643,17 +665,19 @@ section {
 .service-card {
     background: var(--light-color);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+    border: var(--border-card);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(125, 157, 67, 0.35);
 }
 
 .service-card .icon {
@@ -661,7 +685,6 @@ section {
     color: var(--primary-color);
     margin-bottom: 20px;
 }
-/* 여기 아이콘/이미지 교체 */
 .service-card img.icon {
     width: 260px;
     height: 260px;
@@ -729,7 +752,7 @@ section {
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .catalog-filter-btn:hover {
@@ -751,13 +774,35 @@ section {
 
 .catalog-card {
     background: #fff;
-    border: 1px solid #e7edf2;
-    border-radius: 16px;
+    border: var(--border-card);
+    border-radius: var(--radius-card);
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+.catalog-card,
+.service-premium-card,
+.guide-card,
+.trust-point-card,
+.sheet-three-card,
+.sheet-image-card,
+.service-area-card {
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.catalog-card:hover,
+.service-premium-card:hover,
+.guide-card:hover,
+.trust-point-card:hover,
+.sheet-three-card:hover,
+.sheet-image-card:hover,
+.service-area-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(125, 157, 67, 0.35);
 }
 
 .catalog-card.is-hidden {
@@ -900,6 +945,419 @@ section {
 }
 
 /* ----------------------------------------------------------------
+    Portfolio Page
+-----------------------------------------------------------------*/
+.portfolio-hero::after {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: inherit;
+}
+
+.portfolio-cases {
+    background: #f8fafb;
+}
+
+.portfolio-featured-grid,
+.portfolio-case-grid {
+    display: grid;
+    gap: 26px;
+}
+
+.portfolio-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 26px;
+}
+
+.portfolio-case-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.portfolio-card {
+    background: #fff;
+    border: var(--border-card);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    cursor: pointer;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(125, 157, 67, 0.35);
+}
+
+.portfolio-card-media {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #e9eef2;
+}
+
+.portfolio-case-grid .portfolio-card-media {
+    aspect-ratio: 4 / 3;
+}
+
+.portfolio-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-base);
+}
+
+.portfolio-card:hover .portfolio-card-media img {
+    transform: scale(1.05);
+}
+
+.portfolio-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    max-width: calc(100% - 28px);
+    min-height: 32px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.93);
+    color: var(--primary-color);
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1.25;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+}
+
+.portfolio-card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.portfolio-card-kicker {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.portfolio-card h3 {
+    margin: 0;
+    font-size: 1.22rem;
+    line-height: 1.42;
+}
+
+.portfolio-card p {
+    margin: 0;
+    color: #5b6673;
+    font-size: 0.96rem;
+    line-height: 1.68;
+}
+
+.portfolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.portfolio-tags span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #eff5e4;
+    color: #4f6528;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.portfolio-gallery-section {
+    background: #fff;
+}
+
+.portfolio-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.portfolio-gallery-item {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #e9eef2;
+    cursor: pointer;
+}
+
+.portfolio-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-base);
+}
+
+.portfolio-gallery-item figcaption {
+    position: absolute;
+    inset: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(15, 23, 42, 0.58);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.portfolio-gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.portfolio-gallery-item:hover figcaption {
+    opacity: 1;
+}
+
+.portfolio-card.is-filter-hiding,
+.portfolio-gallery-item.is-filter-hiding {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.portfolio-card[hidden],
+.portfolio-gallery-item[hidden],
+.portfolio-load-more[hidden],
+.portfolio-empty-state[hidden] {
+    display: none !important;
+}
+
+.portfolio-empty-state {
+    margin: 28px auto 0;
+    padding: 20px;
+    max-width: 520px;
+    border: 1px solid #e7edf2;
+    border-radius: 12px;
+    background: #fff;
+    color: #5b6673;
+    text-align: center;
+    font-weight: 700;
+}
+
+.portfolio-more-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+body.portfolio-modal-open {
+    overflow: hidden;
+}
+
+.portfolio-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.68);
+}
+
+.portfolio-modal[hidden] {
+    display: none !important;
+}
+
+.portfolio-modal-dialog {
+    position: relative;
+    width: min(920px, 100%);
+    max-height: min(86vh, 820px);
+    overflow-y: auto;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.28);
+}
+
+.portfolio-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.72);
+    color: #fff;
+    cursor: pointer;
+}
+
+.portfolio-modal-media {
+    margin: 0;
+    background: #e9eef2;
+}
+
+.portfolio-modal-media img {
+    display: block;
+    width: 100%;
+    max-height: 58vh;
+    object-fit: cover;
+}
+
+.portfolio-modal-body {
+    padding: 26px;
+}
+
+.portfolio-modal-body .portfolio-badge {
+    position: static;
+    margin-bottom: 14px;
+    box-shadow: none;
+    background: #eff5e4;
+}
+
+.portfolio-modal-body h2 {
+    margin: 0 0 12px;
+    text-align: left;
+    font-size: 1.7rem;
+}
+
+.portfolio-modal-body p {
+    color: #5b6673;
+    line-height: 1.7;
+}
+
+.portfolio-modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.portfolio-modal-actions .btn {
+    min-width: 150px;
+}
+
+.portfolio-gallery-modal .portfolio-modal-dialog {
+    width: min(980px, 100%);
+    background: #111827;
+    color: #fff;
+}
+
+.portfolio-gallery-modal .portfolio-modal-media img {
+    width: auto;
+    max-width: 100%;
+    max-height: 78vh;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.portfolio-gallery-modal .portfolio-modal-body {
+    padding: 16px 20px 20px;
+}
+
+.portfolio-gallery-modal .portfolio-modal-body p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+@media (max-width: 992px) {
+    .portfolio-featured-grid,
+    .portfolio-case-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .portfolio-gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio-featured-grid,
+    .portfolio-case-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .portfolio-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .portfolio-card-body {
+        padding: 18px;
+    }
+
+    .portfolio-card h3 {
+        font-size: 1.12rem;
+    }
+
+    .portfolio-badge {
+        top: 12px;
+        left: 12px;
+        max-width: calc(100% - 24px);
+    }
+
+    .portfolio-modal {
+        padding: 14px;
+    }
+
+    .portfolio-modal-dialog {
+        max-height: 88vh;
+        border-radius: 12px;
+    }
+
+    .portfolio-modal-body {
+        padding: 20px;
+    }
+
+    .portfolio-modal-body h2 {
+        font-size: 1.35rem;
+    }
+
+    .portfolio-modal-actions {
+        flex-direction: column;
+    }
+
+    .portfolio-modal-actions .btn {
+        width: 100%;
+    }
+}
+
+/* ----------------------------------------------------------------
     Gallery Section
 -----------------------------------------------------------------*/
 .gallery-grid {
@@ -920,10 +1378,8 @@ section {
     height: 100%;
     display: block;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform var(--transition-base);
 }
-/* 여기 이미지 교체 */
-
 .gallery-item:hover img {
     transform: scale(1.1);
 }
@@ -941,7 +1397,7 @@ section {
     justify-content: center;
     font-size: 1.5rem;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity var(--transition-base);
 }
 
 .gallery-item:hover .overlay {
@@ -1017,7 +1473,7 @@ section {
     position: absolute;
     right: 20px;
     font-size: 1.5rem;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-base);
 }
 .faq-item[open] summary::after {
     transform: rotate(45deg);
@@ -1059,8 +1515,6 @@ section {
 .cta-buttons .btn i {
     margin-right: 8px;
 }
-/* 여기 링크 교체 */
-
 /* ----------------------------------------------------------------
     Floating Quick Menu
 -----------------------------------------------------------------*/
@@ -1071,7 +1525,7 @@ section {
     transform: translateY(-50%);
     z-index: 999;
     opacity: 0.92;
-    transition: opacity 0.25s ease, transform 0.25s ease, right 0.25s ease;
+    transition: opacity var(--transition-base), transform var(--transition-base), right var(--transition-base);
 }
 
 .quick-menu ul {
@@ -1094,7 +1548,7 @@ section {
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     font-size: 0.8rem;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .quick-menu.is-quiet {
@@ -1151,7 +1605,11 @@ section {
 .footer-info span {
     margin-right: 15px;
 }
-/* 여기 업체 정보 교체 */
+
+.footer-copy {
+    margin-top: 15px;
+    color: #777;
+}
 
 .footer-links a {
     margin-left: 20px;
@@ -1194,7 +1652,7 @@ section {
         justify-content: flex-start;
         align-items: stretch;
         gap: 2px;
-        transition: right 0.4s ease-in-out;
+        transition: right var(--transition-base);
         padding: 96px 20px 24px;
         overflow-y: auto;
         box-shadow: -12px 0 30px rgba(15, 23, 42, 0.18);
@@ -1691,7 +2149,7 @@ section {
     }
 }
 
-/* ================== Simple Dropdown Menu Styles ================== */
+/* ================== Dropdown Menu ================== */
 .nav-menu .dropdown {
     position: relative;
 }
@@ -1706,9 +2164,9 @@ section {
     left: 50%;
     transform: translateX(-50%);
     width: auto;
-    min-width: max-content; /* Ensure width fits content */
+    min-width: max-content;
     padding: 15px 0;
-    margin-top: 10px; /* Space between main menu and dropdown */
+    margin-top: 10px;
     background-color: var(--light-color);
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
@@ -1717,7 +2175,7 @@ section {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px) translateX(-50%);
-    transition: all 0.3s ease-in-out;
+    transition: opacity var(--transition-base), visibility var(--transition-base), transform var(--transition-base);
     z-index: 1001;
     border: 1px solid #eee;
 }
@@ -1743,7 +2201,7 @@ section {
     font-size: 0.95rem;
     font-weight: 500;
     white-space: nowrap;
-    transition: all 0.2s ease;
+    transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 .sub-menu li a:hover {
@@ -1751,17 +2209,14 @@ section {
     color: var(--primary-color);
 }
 
-/* Hide original link underline effect in sub menu */
 .sub-menu li a::after {
     display: none !important;
 }
 
-/* Revert color for scrolled header nav links */
 .header.scrolled .nav-menu .dropdown > a {
     color: var(--dark-color);
 }
 
-/* Responsive Simple Dropdown */
 @media (max-width: 992px) {
     .nav-menu .dropdown > a {
         position: relative;
@@ -1792,12 +2247,12 @@ section {
         background: rgba(15, 23, 42, 0.06);
         color: #334155;
         cursor: pointer;
-        transition: background-color 0.2s ease, transform 0.25s ease;
+        transition: background-color var(--transition-base), transform var(--transition-base);
     }
 
     .dropdown-toggle i {
         font-size: 0.82rem;
-        transition: transform 0.25s ease;
+        transition: transform var(--transition-base);
         pointer-events: none;
     }
 
@@ -1841,7 +2296,7 @@ section {
         max-height: 0;
         overflow: hidden;
         box-sizing: border-box;
-        transition: max-height 0.28s ease;
+        transition: max-height var(--transition-base);
     }
 
     .nav-menu .dropdown.is-open > .sub-menu {
@@ -1897,9 +2352,15 @@ section {
 
 .service-area-card {
     background: #fff;
-    border: 1px solid #e5ecf2;
-    border-radius: 12px;
+    border: var(--border-card);
+    border-radius: var(--radius-card);
     padding: 20px 18px;
+}
+
+.service-detail-main-image {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius-card);
 }
 
 .service-area-card h3 {
@@ -2197,7 +2658,7 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.22s ease, background-color 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, color 0.22s ease;
+    transition: transform var(--transition-base), background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base);
 }
 
 .hero-slider .hero-cta-group .hero-cta-btn-primary {
@@ -2349,7 +2810,7 @@ section {
     }
 }
 
-/* ================== Main Service Cards (Excel Sheet) ================== */
+/* ================== Main Service Cards ================== */
 .sheet-three-card-section {
     background: #f8fbff;
     padding: 56px 0 22px;
@@ -2435,7 +2896,7 @@ section {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .sheet-image-card:hover {
@@ -2464,7 +2925,7 @@ section {
     object-position: center center;
     display: block;
     transform: scale(1.12);
-    transition: transform 0.25s ease;
+    transition: transform var(--transition-base);
 }
 
 .sheet-image-card-img-regular {

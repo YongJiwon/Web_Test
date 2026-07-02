@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko" data-kakao-channel-url="{KAKAO_CHANNEL_URL}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="공간그린케어 사업실적 페이지. 정기케어, 사무실 상업공간 케어, 패브릭 케어, 공기질 개선, 준공청소 등 주요 현장 사례를 확인하세요.">
+    <title>사업실적 | 공간그린케어</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-kakao-channel-url="{KAKAO_CHANNEL_URL}">
+    <header class="header header-main">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="images/공간그린케어-원본-가로.svg" alt="공간그린케어" class="logo-img">
+                    </a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-menu nav-menu-main">
+                    <li><a href="about.html">회사소개</a></li>
+                    <li class="dropdown">
+                        <a href="services/regular-cleaning.html">정기케어</a>
+                        <ul class="sub-menu">
+                            <li><a href="services/office-regular-cleaning.html">사무공간</a></li>
+                            <li><a href="services/retail-regular-cleaning.html">상업공간</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services/commercial-cleaning.html">사무실 상업공간 케어</a>
+                        <ul class="sub-menu">
+                            <li><a href="services/floor-coating.html">바닥 코팅</a></li>
+                            <li><a href="services/parking-cleaning.html">콩자갈청소</a></li>
+                            <li><a href="services/hygiene-grade-evaluation.html">위생등급평가</a></li>
+                            <li><a href="services/post-construction-cleaning.html">준공청소</a></li>
+                            <li><a href="services/aircon-cleaning.html">에어컨청소</a></li>
+                            <li><a href="services/window-cleaning.html">유리창청소</a></li>
+                            <li><a href="services/parking-cleaning.html">주차장청소</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services/fabric-cleaning.html">패브릭 케어</a>
+                        <ul class="sub-menu">
+                            <li><a href="services/carpet-cleaning.html">카페트</a></li>
+                            <li><a href="services/sofa-cleaning.html">소파</a></li>
+                            <li><a href="services/mattress-cleaning.html">침대</a></li>
+                            <li><a href="services/partition-cleaning.html">파티션</a></li>
+                            <li><a href="services/acoustic-panel-cleaning.html">흡음재</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services/air-quality-solution.html">공기질 개선 솔루션</a>
+                        <ul class="sub-menu">
+                            <li><a href="services/bake-out.html">새집증후군</a></li>
+                            <li><a href="services/bake-out.html">베이크아웃</a></li>
+                            <li><a href="services/odor-removal.html">냄새제거</a></li>
+                            <li><a href="services/ozone-sterilization.html">오존살균</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html" aria-current="page">사업실적</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="tel:1844-2355" class="tel">1844-2355</a>
+            </div>
+            <button class="hamburger" type="button" aria-label="메뉴 열기">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero catalog-hero portfolio-hero" style="background-image: url('images/Office.webp');">
+            <div class="hero-content">
+                <nav class="breadcrumb" aria-label="현재 위치">
+                    <a href="index.html">홈</a>
+                    <span aria-hidden="true">/</span>
+                    <span>사업실적</span>
+                </nav>
+                <h1>사업실적</h1>
+                <p>공간그린케어가 진행한 주요 현장 사례를 확인해보세요.<br>현장 특성에 맞춘 작업 사례를 분야별로 정리했습니다.</p>
+            </div>
+        </section>
+
+        <section class="portfolio-cases" aria-labelledby="portfolio-cases-title">
+            <div class="container">
+                <div class="catalog-heading">
+                    <h2 id="portfolio-cases-title">대표 작업 사례</h2>
+                    <p>현장 유형, 오염 상태, 운영 시간에 맞춰 진행한 더미 사례입니다. 추후 실제 데이터로 교체할 수 있도록 카드 단위로 구성했습니다.</p>
+                </div>
+
+                <div class="catalog-filters portfolio-filters" aria-label="사업실적 카테고리 필터">
+                    <button type="button" class="catalog-filter-btn is-active" data-category="all">전체 사례</button>
+                    <button type="button" class="catalog-filter-btn" data-category="regular">정기케어</button>
+                    <button type="button" class="catalog-filter-btn" data-category="commercial">사무실 상업공간 케어</button>
+                    <button type="button" class="catalog-filter-btn" data-category="fabric">패브릭 케어</button>
+                    <button type="button" class="catalog-filter-btn" data-category="air-quality">공기질 개선</button>
+                    <button type="button" class="catalog-filter-btn" data-category="post-construction">준공청소</button>
+                </div>
+
+                <div class="portfolio-featured-grid" data-portfolio-list="featured">
+                    <article class="portfolio-card" data-case-id="case-regular-office-01" data-category="regular">
+                        <figure class="portfolio-card-media">
+                            <span class="portfolio-badge">정기케어</span>
+                            <img src="images/Office.webp" alt="사무공간 정기케어 현장 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        </figure>
+                        <div class="portfolio-card-body">
+                            <p class="portfolio-card-kicker">사무공간</p>
+                            <h3>오피스 공용부 정기 관리</h3>
+                            <p>출근 전 동선을 기준으로 바닥, 회의실, 탕비 공간을 주기적으로 관리한 사례입니다.</p>
+                            <div class="portfolio-tags" aria-label="사례 태그">
+                                <span>#주2회</span>
+                                <span>#공용부</span>
+                                <span>#오피스</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" data-case-id="case-commercial-floor-01" data-category="commercial">
+                        <figure class="portfolio-card-media">
+                            <span class="portfolio-badge">사무실 상업공간 케어</span>
+                            <img src="images/Floor.webp" alt="상업공간 바닥 케어 현장 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        </figure>
+                        <div class="portfolio-card-body">
+                            <p class="portfolio-card-kicker">상업공간</p>
+                            <h3>매장 바닥 코팅 및 오염 복원</h3>
+                            <p>고객 출입이 잦은 매장 바닥의 생활 오염과 광택 저하를 정리한 사례입니다.</p>
+                            <div class="portfolio-tags" aria-label="사례 태그">
+                                <span>#바닥코팅</span>
+                                <span>#영업전작업</span>
+                                <span>#상업시설</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="portfolio-case-grid" data-portfolio-list="standard">
+                    <article class="portfolio-card" data-case-id="case-fabric-carpet-01" data-category="fabric">
+                        <figure class="portfolio-card-media">
+                            <span class="portfolio-badge">패브릭 케어</span>
+                            <img src="images/Carpet.webp" alt="카페트 케어 현장 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        </figure>
+                        <div class="portfolio-card-body">
+                            <p class="portfolio-card-kicker">카페트</p>
+                            <h3>업무공간 카페트 집중 세척</h3>
+                            <p>집중 오염 구간을 중심으로 먼지와 얼룩을 단계적으로 제거한 사례입니다.</p>
+                            <div class="portfolio-tags" aria-label="사례 태그">
+                                <span>#카페트</span>
+                                <span>#얼룩관리</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" data-case-id="case-air-quality-bakeout-01" data-category="air-quality">
+                        <figure class="portfolio-card-media">
+                            <span class="portfolio-badge">공기질 개선</span>
+                            <img src="images/Kitchen.webp" alt="공기질 개선 현장 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        </figure>
+                        <div class="portfolio-card-body">
+                            <p class="portfolio-card-kicker">신축 공간</p>
+                            <h3>입점 전 냄새 저감 작업</h3>
+                            <p>환기 계획과 탈취 작업을 함께 적용해 초기 냄새 부담을 낮춘 사례입니다.</p>
+                            <div class="portfolio-tags" aria-label="사례 태그">
+                                <span>#냄새제거</span>
+                                <span>#입점전</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card" data-case-id="case-post-construction-01" data-category="post-construction">
+                        <figure class="portfolio-card-media">
+                            <span class="portfolio-badge">준공청소</span>
+                            <img src="images/Factory_partition_wall_cleaning.webp" alt="준공청소 현장 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        </figure>
+                        <div class="portfolio-card-body">
+                            <p class="portfolio-card-kicker">준공 현장</p>
+                            <h3>마감 분진 및 잔여 오염 정리</h3>
+                            <p>사용 시작 전 바닥, 벽면, 설비 주변의 분진과 잔여물을 정리한 사례입니다.</p>
+                            <div class="portfolio-tags" aria-label="사례 태그">
+                                <span>#준공청소</span>
+                                <span>#분진제거</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="portfolio-empty-state" hidden>해당 카테고리의 사례가 준비 중입니다.</p>
+
+                <div class="portfolio-more-actions">
+                    <button type="button" class="btn btn-primary portfolio-load-more" data-portfolio-load-more>추가 사례 모아보기</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-gallery-section" aria-labelledby="portfolio-gallery-title">
+            <div class="container">
+                <div class="catalog-heading">
+                    <h2 id="portfolio-gallery-title">현장 갤러리</h2>
+                    <p>현장 사진 영역은 실제 사례 이미지로 교체하기 쉽도록 갤러리 아이템 단위로 구성했습니다.</p>
+                </div>
+
+                <div class="portfolio-gallery-grid" data-gallery-list="portfolio">
+                    <figure class="portfolio-gallery-item" data-gallery-id="gallery-regular-01" data-category="regular">
+                        <img src="images/Office.webp" alt="정기케어 현장 갤러리 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        <figcaption><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i><span>확대보기</span></figcaption>
+                    </figure>
+                    <figure class="portfolio-gallery-item" data-gallery-id="gallery-commercial-01" data-category="commercial">
+                        <img src="images/Floor.webp" alt="상업공간 케어 현장 갤러리 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        <figcaption><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i><span>확대보기</span></figcaption>
+                    </figure>
+                    <figure class="portfolio-gallery-item" data-gallery-id="gallery-fabric-01" data-category="fabric">
+                        <img src="images/Carpet.webp" alt="패브릭 케어 현장 갤러리 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        <figcaption><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i><span>확대보기</span></figcaption>
+                    </figure>
+                    <figure class="portfolio-gallery-item" data-gallery-id="gallery-aircon-01" data-category="air-quality">
+                        <img src="images/Ceiling_cassette_air_conditioner.webp" alt="공기질 개선 현장 갤러리 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        <figcaption><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i><span>확대보기</span></figcaption>
+                    </figure>
+                    <figure class="portfolio-gallery-item" data-gallery-id="gallery-post-01" data-category="post-construction">
+                        <img src="images/Factory_partition_wall_cleaning.webp" alt="준공청소 현장 갤러리 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        <figcaption><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i><span>확대보기</span></figcaption>
+                    </figure>
+                    <figure class="portfolio-gallery-item" data-gallery-id="gallery-retail-01" data-category="commercial">
+                        <img src="images/House.webp" alt="상업공간 정리 현장 갤러리 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        <figcaption><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i><span>확대보기</span></figcaption>
+                    </figure>
+                    <figure class="portfolio-gallery-item" data-gallery-id="gallery-odor-01" data-category="air-quality">
+                        <img src="images/Kitchen.webp" alt="냄새 제거 현장 갤러리 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        <figcaption><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i><span>확대보기</span></figcaption>
+                    </figure>
+                    <figure class="portfolio-gallery-item" data-gallery-id="gallery-solar-01" data-category="commercial">
+                        <img src="images/Solar_panel.webp" alt="외부 시설 케어 현장 갤러리 placeholder 이미지" loading="lazy" data-image-placeholder="true">
+                        <figcaption><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i><span>확대보기</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-cta">
+            <div class="container">
+                <h2>비슷한 현장도 상담 가능합니다</h2>
+                <p>공간 유형과 작업 범위를 알려주시면 현장에 맞는 관리 방향을 안내해드립니다.</p>
+                <div class="catalog-cta-buttons">
+                    <a href="tel:1844-2355" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 전화 상담</a>
+                    <a href="{KAKAO_CHANNEL_URL}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-comment"></i> 카카오톡 상담</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-info">
+                <h3>공간그린케어</h3>
+                <p><span>주소 : 경기도 수원시 팔달구 창룡문로 76-13</span></p>
+                <p><span>전화 : 1844-2355</span><span>휴대전화 : 010-4864-3279</span></p>
+                <p><span>이메일 : m-drive@naver.com</span><span>인스타그램 : t18442355</span></p>
+                <p class="footer-copy">&copy; 2026 공간그린케어. All Rights Reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">회사소개</a>
+                <a href="services/regular-cleaning.html">정기케어</a>
+                <a href="services/commercial-cleaning.html">사무실 상업공간 케어</a>
+                <a href="services/fabric-cleaning.html">패브릭 케어</a>
+                <a href="services/air-quality-solution.html">공기질 개선 솔루션</a>
+                <a href="portfolio.html">사업실적</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -888,6 +888,17 @@ section {
     gap: 8px;
 }
 
+.sidebar-contact-actions {
+    display: grid;
+    gap: 10px;
+}
+
+.sidebar-contact-actions .sidebar-contact-btn {
+    width: 100%;
+    background: white;
+    color: var(--primary-color);
+}
+
 /* ----------------------------------------------------------------
     Gallery Section
 -----------------------------------------------------------------*/

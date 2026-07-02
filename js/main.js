@@ -29,6 +29,7 @@
         const hamburgerIcon = hamburger.querySelector('i');
         const isMobileView = () => mobileMediaQuery.matches;
         const dropdownItems = Array.from(navMenu.querySelectorAll(':scope > li.dropdown'));
+        const closingTimers = new WeakMap();
 
         const setSubMenuAccessibility = (subMenu, isOpen, mobileOnly = false) => {
             if (mobileOnly && !isMobileView()) {
@@ -63,6 +64,7 @@
                     }
                 } else {
                     item.classList.remove('is-open');
+                    item.classList.remove('is-closing');
                     toggleButton.setAttribute('aria-expanded', 'false');
                     subMenu.style.removeProperty('max-height');
                     setSubMenuAccessibility(subMenu, true);
@@ -70,15 +72,53 @@
             });
         };
 
-        const closeAllDropdowns = () => {
-            dropdownItems.forEach((item) => {
-                const subMenu = item.querySelector(':scope > .sub-menu');
-                const toggleButton = item.querySelector(':scope > .dropdown-toggle');
-                if (!subMenu || !toggleButton) return;
-                item.classList.remove('is-open');
-                toggleButton.setAttribute('aria-expanded', 'false');
+        const closeDropdown = (item) => {
+            const subMenu = item.querySelector(':scope > .sub-menu');
+            const toggleButton = item.querySelector(':scope > .dropdown-toggle');
+            if (!subMenu || !toggleButton) return;
+
+            const closeTimer = closingTimers.get(item);
+            if (closeTimer) {
+                window.clearTimeout(closeTimer);
+                closingTimers.delete(item);
+            }
+
+            toggleButton.setAttribute('aria-expanded', 'false');
+            const triggerLink = item.querySelector(':scope > a');
+            const menuLabel = triggerLink ? triggerLink.textContent.trim() : '메뉴';
+            toggleButton.setAttribute('aria-label', `${menuLabel} 하위 메뉴 열기`);
+
+            if (!isMobileView()) {
+                item.classList.remove('is-open', 'is-closing');
+                subMenu.style.removeProperty('max-height');
+                setSubMenuAccessibility(subMenu, true);
+                return;
+            }
+
+            if (!item.classList.contains('is-open') && !item.classList.contains('is-closing')) {
                 subMenu.style.maxHeight = '0px';
                 setSubMenuAccessibility(subMenu, false, true);
+                return;
+            }
+
+            subMenu.style.maxHeight = `${subMenu.scrollHeight}px`;
+            subMenu.offsetHeight;
+            item.classList.remove('is-open');
+            item.classList.add('is-closing');
+            subMenu.style.maxHeight = '0px';
+            setSubMenuAccessibility(subMenu, false, true);
+
+            const nextTimer = window.setTimeout(() => {
+                item.classList.remove('is-closing');
+                closingTimers.delete(item);
+            }, 300);
+            closingTimers.set(item, nextTimer);
+        };
+
+        const closeAllDropdowns = (exceptItem = null) => {
+            dropdownItems.forEach((item) => {
+                if (item === exceptItem) return;
+                closeDropdown(item);
             });
         };
 
@@ -107,7 +147,13 @@
             setSubMenuAccessibility(subMenu, false, true);
 
             const openItem = () => {
-                closeAllDropdowns();
+                closeAllDropdowns(item);
+                const closeTimer = closingTimers.get(item);
+                if (closeTimer) {
+                    window.clearTimeout(closeTimer);
+                    closingTimers.delete(item);
+                }
+                item.classList.remove('is-closing');
                 item.classList.add('is-open');
                 toggleButton.setAttribute('aria-expanded', 'true');
                 toggleButton.setAttribute('aria-label', `${menuLabel} 하위 메뉴 닫기`);
@@ -116,11 +162,7 @@
             };
 
             const closeItem = () => {
-                item.classList.remove('is-open');
-                toggleButton.setAttribute('aria-expanded', 'false');
-                toggleButton.setAttribute('aria-label', `${menuLabel} 하위 메뉴 열기`);
-                subMenu.style.maxHeight = '0px';
-                setSubMenuAccessibility(subMenu, false, true);
+                closeDropdown(item);
             };
 
             const toggleItem = () => {
